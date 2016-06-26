@@ -1,6 +1,6 @@
 class Counter
 
-  # originally aplhabet is 64 symbols:
+  # originally aplhabet is 53 symbols:
   #          "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ0123456789-_"
   # and is a bit shuffled to be more interesting
 
@@ -64,7 +64,6 @@ class Counter
 
   #database jeys of global counters
   KEY = "tubity:counter"
-  # KEY_DICTIONARY = "Tubity:Dictionary"
 
   def self.get_hash
     hash = R.get(KEY)
@@ -77,19 +76,6 @@ class Counter
 
 
   private
-
-  # def self.next_hash_with_dictionary(current: nil, alphabet: ALPHABET)
-  #   words = new = current
-
-  #   while !words.empty?
-  #     new = next_hash(current: new, alphabet: alphabet)
-  #     words = new.delete(ALPHABET_SKIPPABLE)
-  #                .split(ALPHABET_EXTRA)
-  #                .select{|w| !w.empty? && R.sismember(KEY_DICTIONARY, w.downcase)}
-  #   end
-
-  #   new
-  # end
 
   def self.next_hash(current: nil, alphabet: ALPHABET)
     return (0..1).map{|i| alphabet[i][0]}.join unless current
@@ -116,16 +102,6 @@ class Counter
     end
 
     # if we got this point this means that we need to extend length
-    return new + alphabet[new.size][0]
-
-    # while a_index == alphabet.length
-    #   h_index -= 1
-    #   new << alphabet.first and break if h_index < 0
-
-    #   last = new[h_index]
-    #   a_index = alphabet.index(last) + 1
-
-    #   new[h_index] = alphabet[a_index % alphabet.length]
-    # end
+    new + alphabet[new.size][0]
   end
 end
