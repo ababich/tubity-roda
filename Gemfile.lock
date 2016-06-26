@@ -1,0 +1,23 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    hiredis (0.6.1)
+    oj (2.16.1)
+    puma (3.1.1)
+    rack (1.6.4)
+    redis (3.3.0)
+    roda (2.15.0)
+      rack
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hiredis
+  oj
+  puma (~> 3.1.1)
+  redis
+  roda
+
+BUNDLED WITH
+   1.11.2
