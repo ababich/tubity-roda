@@ -8,15 +8,18 @@ class Tubity < Roda
   plugin :json_parser, parser: Oj.method(:load)
   plugin :json, serializer: proc{|o| Oj.dump(o)}
 
+  plugin :path
+  path :root, url: true do |hash|
+    "/#{hash}"
+  end
+
   route do |r|
     r.post 's' do
       url = r.params['url']
-      shorten_url = String.new(TubityUrl.shorten(url: url).to_s)
+      shorten_url = TubityUrl.shorten(url: url)
 
-      {
-        'url' => url,
-        'shorten_url' => shorten_url
-      }
+      # Oj requires old hash format to preserve keys as String
+      { 'url' => url, 'shorten_url' => root_url(shorten_url) }
     end
 
     r.is ':hash' do |hash|
