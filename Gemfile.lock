@@ -15,9 +15,9 @@ PLATFORMS
 DEPENDENCIES
   hiredis
   oj
-  puma (~> 3.1.1)
+  puma
   redis
   roda
 
 BUNDLED WITH
-   1.11.2
+   1.12.5

@@ -1,12 +1,12 @@
 require 'roda'
-require 'byebug'
+# require 'byebug'
 require 'oj'
 
 Dir[File.dirname(__FILE__) + '/models/*.rb'].each {|file| require file }
 
 class Tubity < Roda
-  plugin :json_parser, parser: Oj.method(:load)
   plugin :json, serializer: proc{|o| Oj.dump(o)}
+  plugin :json_parser, parser: Oj.method(:load)
 
   plugin :path
   path :root, url: true do |hash|

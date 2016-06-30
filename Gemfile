@@ -11,5 +11,5 @@ gem 'oj'
 
 # App
 gem "roda"
-gem "puma", "~> 3.1.1"
+gem "puma"
 
