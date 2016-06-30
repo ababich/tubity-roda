@@ -2,17 +2,11 @@
 
 ## Installation
 
-1. Install Ruby 2.3.1 (see `.ruby-version` file)
+1. Checkout
 
-2. Checkout
+2. Install Docker with Compose and Machine (https://www.docker.com/)
 
-3. Install bundle `$ bundle install --path vendor`
-
-4. Install and run redis server (http://redis.io)
-
-## Usage
-
-Run with puma defaults `$ bundle exec puma`
+3. `$ docker-compose up`
 
 ### API
 
