@@ -8,6 +8,8 @@
 
 3. `$ docker-compose up`
 
+4. find API on `docker machine ip` port 9990
+
 ### API
 
 You need to send JSON requests like:
@@ -40,7 +42,7 @@ var benchrest = require('bench-rest');
 
 var flow = {
   main: [
-    { post: 'http://localhost:9292/s', json: {'url': 'http://mydata_roda_#{INDEX}'} },
+    { post: 'http://docker:9990/s', json: {'url': 'http://mydata_roda_docker2_#{INDEX}'} },
   ]
 };
 module.exports = flow;
