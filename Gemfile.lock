@@ -5,6 +5,7 @@ GEM
     oj (2.16.1)
     puma (3.1.1)
     rack (1.6.4)
+    rack-cors (0.4.0)
     redis (3.3.0)
     roda (2.15.0)
       rack
@@ -16,6 +17,7 @@ DEPENDENCIES
   hiredis
   oj
   puma
+  rack-cors
   redis
   roda
 

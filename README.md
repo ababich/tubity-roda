@@ -8,7 +8,7 @@
 
 3. `$ docker-compose up`
 
-4. find API on `docker machine ip` port 9990
+4. find API on `docker-machine ip` port 9990
 
 ### API
 
