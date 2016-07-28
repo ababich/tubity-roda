@@ -4,11 +4,9 @@
 
 1. Checkout
 
-2. Install Docker with Compose and Machine (https://www.docker.com/)
+2. Install Docker with Compose (https://www.docker.com/)
 
-3. `$ docker-compose up`
-
-4. find API on `docker-machine ip` port 9990
+3. Run API stack using `$ docker-compose up`
 
 ### API
 
@@ -19,6 +17,9 @@ You need to send JSON requests like:
 }
 ```
 
+to `http://TUBITY_API_HOST:9990/s`
+
+
 Response is shortened URL like:
 ```json
 {
@@ -26,6 +27,9 @@ Response is shortened URL like:
   "shorten_url": "http://localhost:3000/s4"
 }
 ```
+
+`TUBITY_API_HOST` is usually `localhost` but you should follow your personal
+Docker installation which may be different depending on Docker version
 
 #### Redis keys
 
@@ -42,7 +46,7 @@ var benchrest = require('bench-rest');
 
 var flow = {
   main: [
-    { post: 'http://docker:9990/s', json: {'url': 'http://mydata_roda_docker2_#{INDEX}'} },
+    { post: 'http://localhost:9990/s', json: {'url': 'http://mydata_roda_docker2_#{INDEX}'} },
   ]
 };
 module.exports = flow;
